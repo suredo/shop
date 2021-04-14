@@ -5,15 +5,21 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import Products from "./pages/products";
 
-const usersFake = [
-  { login: "sled", password: "test" },
-  { login: "dev", password: "dev" },
-];
+interface IUsers {
+  login: string;
+  password: string;
+}
 
 function App() {
-  const [users, setUsers] = useState(usersFake);
+  const [users, setUsers] = useState<IUsers[]>([]);
   const addNewUser = (login: string, password: string) => {
-    setUsers([...users, { login: login, password: password }]);
+    if (users) {
+      if (users.find((user) => user.login === login)) {
+        alert("User already registered");
+      } else {
+        setUsers([...users, { login: login, password: password }]);
+      }
+    }
   };
   console.log(users);
   return (

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { TodoRoutes } from "./api";
+import { ProductRoutes } from "./api";
 
 export class Routes {
   private routes: Router;
@@ -12,7 +12,7 @@ export class Routes {
     this.routes.use("/auth", (req, res) => {
       res.send("Not Implemented");
     });
-    this.routes.use("/api", new TodoRoutes().getRoutes());
+    this.routes.use("/api", new ProductRoutes().getRoutes());
   }
 
   public getRoutes() {

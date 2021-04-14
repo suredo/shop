@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Div = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 4px;
   justify-content: center;
   align-items: center;
   width: 100vh;
@@ -11,7 +12,7 @@ export const Div = styled.div`
 
 export const Product = styled.div`
   border: 1px solid black;
-  width: 100px;
+  width: 150px;
   img {
     width: 100%;
   }

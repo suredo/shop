@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { ProductController } from "../../controllers/productController";
 
-const todoController = new ProductController();
+const productController = new ProductController();
 
-export class TodoRoutes {
+export class ProductRoutes {
   private routes: Router;
 
   constructor() {
@@ -12,7 +12,7 @@ export class TodoRoutes {
   }
 
   private endpoints() {
-    this.routes.get("/", todoController.getProducts);
+    this.routes.get("/", productController.getProducts);
   }
 
   public getRoutes() {

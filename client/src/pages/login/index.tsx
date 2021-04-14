@@ -13,6 +13,7 @@ const Login = ({ users }: IUsers) => {
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const exists = users.find((user) => (user.login = login));
+    console.log(exists);
     if (exists?.password === pass) {
       history.push("/products");
     } else {
